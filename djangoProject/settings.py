@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'nested_admin',
-    'nested_inline',
     'rest_framework',
     'drf_spectacular',
     'app'
@@ -92,7 +90,6 @@ DATABASES = {
         'default': {
             'ENGINE': 'djongo',
             'NAME': 'test_mongo',
-            'ENFORCE_SCHEMA': False,
             'CLIENT': {
                 'host': 'localhost',
             }
