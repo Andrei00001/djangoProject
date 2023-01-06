@@ -19,8 +19,8 @@ class Form(mongo_models.Model):
         default=generate_random_id,
     )
     name = mongo_models.CharField(max_length=50, unique=True)
-    email = mongo_models.EmailField(max_length=64)
+    email = mongo_models.EmailField(max_length=64, unique=True)
     phone = mongo_models.CharField(max_length=12, unique=True)
-    date = mongo_models.DateField(auto_now_add=True, unique=True)
+    date = mongo_models.DateTimeField()
     text = mongo_models.TextField(max_length=1024)
 

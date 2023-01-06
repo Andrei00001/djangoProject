@@ -10,7 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,7 +95,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'djongo',
-            'NAME': 'test_mongo',
+            'NAME': os.getenv('DATABASE_NAME'),
             'CLIENT': {
                 'host': 'localhost',
             }
